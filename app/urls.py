@@ -20,5 +20,5 @@ from api.views import VideoList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', VideoList.as_view())
+    path('videos/', VideoList.as_view())
 ]
