@@ -8,6 +8,11 @@ from api.utils import get_videos_from_api, convert_time_to_unix
 
 @shared_task
 def populate_db(response):
+    """
+    A function which runs as a shared task on celery using RabbitMQ as a broker
+    :param response: Gets a Response from the youtube api
+    :return: The token for the next page in the API
+    """
     if not response:
         return None
     results = response.get("items", [])
@@ -39,6 +44,7 @@ def populate_db(response):
 
 token = None
 
+# Make an api call and populate the database every 30 seconds
 while True:
     sleep(30)
     if not token:

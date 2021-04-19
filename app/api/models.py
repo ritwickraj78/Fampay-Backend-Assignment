@@ -3,6 +3,9 @@ from django.db import models
 
 # Create your models here.
 class YoutubeVideo(models.Model):
+    """
+    A Model to Store Individual Youtube Videos
+    """
     video_id = models.CharField(primary_key=True, max_length=256)
     title = models.CharField(max_length=256)
     description = models.CharField(max_length=256)

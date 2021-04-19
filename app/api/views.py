@@ -13,7 +13,9 @@ from api.utils import get_videos_from_api
 
 
 class VideoList(APIView):
-
+    """
+    API Class for getting all videos in the Database
+    """
     def get(self, request, format=None):
         videos = YoutubeVideo.objects.all()
         paginator = PageNumberPagination()
@@ -25,7 +27,10 @@ class VideoList(APIView):
 
 
 class VideoSearch(APIView):
-
+    """
+    API to Search Videos from Database based on query term
+    Request Parameter: q - Query String
+    """
     def get(self, request, format=None):
         query = request.query_params.get('q')
         if query:
