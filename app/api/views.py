@@ -17,7 +17,8 @@ class VideoList(APIView):
     API Class for getting all videos in the Database
     """
     def get(self, request, format=None):
-        videos = YoutubeVideo.objects.all()
+        response = get_videos_from_api()
+        videos = YoutubeVideo.objects.order_by('-published_date').all()
         paginator = PageNumberPagination()
         paginator.page_size = 20
         paginator.max_page_size = 20
