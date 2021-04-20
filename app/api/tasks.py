@@ -51,4 +51,6 @@ while True:
         response = get_videos_from_api()
     else:
         response = get_videos_from_api(token)
+    if 'stop_task' in response:
+        break
     token = populate_db(response=response)

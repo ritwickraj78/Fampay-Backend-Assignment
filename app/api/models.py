@@ -14,3 +14,19 @@ class YoutubeVideo(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class GoogleAPIKeys(models.Model):
+    """
+    Model to store the List of API Keys
+    """
+    key = models.CharField(max_length=256)
+    last_expired = models.DateTimeField(blank=True,null=True)
+    index = models.IntegerField()
+
+
+class MetaData(models.Model):
+    """
+    Model to store API Metadata
+    """
+    key_index = models.IntegerField(default=1)
