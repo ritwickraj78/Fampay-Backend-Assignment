@@ -12,6 +12,30 @@
 
 ![](https://github.com/ritwickraj78/Fampay-Backend-Assignment/blob/main/assets/flow.png)
 
+## Adding data to the database - 
+
+* Using celery as a worker, we run a task every 30 seconds which makes an api call which fetches the data.
+* The data is then validated and stored in the database as a distributed async task adding data to the database using Celery as a broker.
+* Simultaneously we can fetch videos from the endpoints which returns paginated data from the database.
+
+Points to Note:
+
+* The publishedAfter field doesn't work. [Link](https://stackoverflow.com/questions/27907244/youtube-api-v3-activities-publishedafter-publishedbefore-parameter-ignored)
+* The nextPageToken is used to call the api consecutively which helps in fetching non-repeated data from youtube. Although if the a video is already present in the Database it is skipped.
+
+
+
+## Updating Expired API Keys - 
+
+* We store the last expired timestamp of each key and do an indexing for the keys.
+* Once a key is expired we store the time it expired and move on to the key in the next index.
+* Once we have exhaused all the keys we come back to check with the first one checking whether it is working again.
+* If none of the keys are working we stop the task.
+
+Points to Note:
+
+* The key_index in metadata keeps track of the key we are currently using.
+
 # Project Setup
 
 Note: Due to the following [issue](https://dev.to/aashish/httplib2-servernotfounderror-unable-to-find-the-server-at-www-googleapis-com-2c85) the Youtube API might not function in docker. In such case please use the virtual environment.
