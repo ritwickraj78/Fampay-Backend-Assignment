@@ -10,7 +10,7 @@
 * RabbitMQ
 * Sqlite3
 
-![](/home/ritwickraj78/Downloads/Tinder for Music (1).png)
+![](https://github.com/ritwickraj78/Fampay-Backend-Assignment/blob/main/assets/flow.png)
 
 # Project Setup
 
@@ -77,10 +77,11 @@ Note: Due to the following [issue](https://dev.to/aashish/httplib2-servernotfoun
   ```
 
   * GET Videos API
-
-    ![](/home/ritwickraj78/Pictures/Screenshot from 2021-04-20 22-24-51.png)
+    
+    
+    ![](https://github.com/ritwickraj78/Fampay-Backend-Assignment/blob/main/assets/Screenshot%20from%202021-04-20%2022-24-51.png)
 
   * Search Videos API
 
-    ![](/home/ritwickraj78/Pictures/Screenshot from 2021-04-20 22-24-46.png)
+    ![](https://github.com/ritwickraj78/Fampay-Backend-Assignment/blob/main/assets/Screenshot%20from%202021-04-20%2022-24-46.png)
 
